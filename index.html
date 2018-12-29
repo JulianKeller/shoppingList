@@ -17,25 +17,26 @@
 <body>
 <div class="container">
   <h1>Shopping List</h1>
+  <h3 id="total">Total</h3>
 
 <table id="myTable" class="table">
   <thead>
   <tr>
-    <th scope="col">Qty</th>
     <th scope="col">Item</th>
     <th scope="col">Price</th>
   </tr>
   </thead>
   <tbody>
   <tr>
-    <td contenteditable="true" scope="row">1</td>
-    <td contenteditable="true">Mark</td>
-    <td contenteditable="true">Otto</td>
+    <!--<td contenteditable="true">Alpha</td>-->
+    <!--<td contenteditable="true">10</td>-->
   </tr>
   </tbody>
 </table>
 
   <button onclick="addRow()" type="button" class="btn btn-dark">Add Item</button>
+  <button onclick="sumColumn()" type="button" class="btn btn-dark">Sum</button>
+  <button onclick="getTable()" type="button" class="btn btn-dark">getTable</button>
 
 
 </div>
