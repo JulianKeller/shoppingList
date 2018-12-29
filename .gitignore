@@ -1,0 +1,6 @@
+# Ignore IntelliJ Project files.
+*.xml
+*.iml
+.idea
+.idea/
+.DS_Store
