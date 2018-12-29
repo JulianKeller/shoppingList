@@ -47,12 +47,9 @@ function saveList(){
   for (let i = 1; i < table.rows.length; i++) {
     tableArray[i] = new Array(2);
 
-    console.log(table.rows[i].cells[0].innerHTML);
     tableArray[i][0] = table.rows[i].cells[0].innerHTML;
     tableArray[i][1] = parseInt(table.rows[i].cells[1].innerHTML);
 
-    // console.log('item ' + tableArray[i][0]);
-    // console.log('price ' + tableArray[i][1]);
   }
   localStorage.setItem('table', JSON.stringify(tableArray));
 }
@@ -66,10 +63,18 @@ function getTable(){
   }
   const table = document.getElementById("myTable");
 
-  console.log("table length " + table.rows.length);
-
   let storageList = JSON.parse(localStorage.getItem('table'));
-  console.log(storageList);
+
+  // check for empty list
+  if (!storageList){
+    console.log("Empty List");
+    return;
+  }
+
+  // if item already exists, don't load it again
+  for (let i = 1; i < table.rows.length; i++) {
+    document.getElementById('myTable').deleteRow(i);
+  }
 
   // restore table
   for (let i = 1; i < storageList.length; i++) {
@@ -79,7 +84,6 @@ function getTable(){
 
     // default cell descriptions
     item.innerHTML = storageList[i][0];
-    console.log("Storage List" + storageList[i]);
     price.innerHTML = Number(storageList[i][1]);
 
     // Make new rows editable
@@ -87,3 +91,16 @@ function getTable(){
     price.setAttribute('contenteditable', 'true');
   }
 }
+
+// empty list
+function emptyList() {
+  localStorage.clear(); // empty local storage
+  location.reload(); // reload the page
+}
+
+// run on page load
+window.onload = function () {
+  getTable();
+  sumColumn();
+};
+
