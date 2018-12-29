@@ -47,6 +47,7 @@ function saveList(){
   for (let i = 1; i < table.rows.length; i++) {
     tableArray[i] = new Array(2);
 
+    console.log(table.rows[i].cells[0].innerHTML);
     tableArray[i][0] = table.rows[i].cells[0].innerHTML;
     tableArray[i][1] = parseInt(table.rows[i].cells[1].innerHTML);
 
@@ -79,7 +80,7 @@ function getTable(){
     // default cell descriptions
     item.innerHTML = storageList[i][0];
     console.log("Storage List" + storageList[i]);
-    price.innerHTML = storageList[i][1];
+    price.innerHTML = Number(storageList[i][1]);
 
     // Make new rows editable
     item.setAttribute('contenteditable', 'true');
