@@ -104,3 +104,8 @@ window.onload = function () {
   sumColumn();
 };
 
+
+// TODO run sumColumn when the price column input is changed. Also cross out the item in the list and move it to the bottom.
+// document.getElementById('myTable').addEventListener('input', function () {
+//   console.log("input changed!");
+// });
