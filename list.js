@@ -13,6 +13,7 @@ function addRow() {
   // Make new rows editable
   item.setAttribute('contenteditable', 'true');
   price.setAttribute('contenteditable', 'true');
+  price.setAttribute('oninput', 'sumColumn()');
 }
 
 
@@ -23,12 +24,15 @@ function sumColumn() {
   const table = document.getElementById("myTable");
   for (let i = 1; i < table.rows.length; i++) {
     console.log(table.rows[i].cells[1].innerHTML);
-    const value = parseInt(table.rows[i].cells[1].innerHTML);   // check for empty prices
+    // const value = parseInt(table.rows[i].cells[1].innerHTML);   // check for empty prices
+    const value = parseFloat(table.rows[i].cells[1].innerHTML);   // check for empty prices
     if (isNaN(value)){
       continue;
     }
+    console.log("value " + value);
     sum += value;
   }
+  console.log("sum " + sum);
   document.getElementById('total').innerHTML = 'Total $' + sum; // display the total on the page
   return sum;
 }
@@ -109,3 +113,8 @@ window.onload = function () {
 // document.getElementById('myTable').addEventListener('input', function () {
 //   console.log("input changed!");
 // });
+
+function test() {
+  console.log("Test() has run!");
+  sumColumn();
+}

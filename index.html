@@ -19,7 +19,7 @@
   <h1>Shopping List</h1>
   <h3 id="total">Total</h3>
 
-<table id="myTable" class="table">
+<table id="myTable" class="table border-bottom">
   <thead>
   <tr>
     <th scope="col">Item</th>
@@ -29,13 +29,13 @@
   <tbody>
   <tr>
     <td contenteditable="true"></td>
-    <td contenteditable="true"></td>
+    <td contenteditable="true" oninput="sumColumn()"></td>
   </tr>
   </tbody>
 </table>
 
   <button onclick="addRow()" type="button" class="btn btn-dark">Add Item</button>
-  <button onclick="sumColumn()" type="button" class="btn btn-dark">Sum</button>
+  <!--<button onclick="sumColumn()" type="button" class="btn btn-dark">Sum</button>-->
   <!--<button onclick="getTable()" type="button" class="btn btn-dark">Restore</button>-->
   <button onclick="emptyList()" type="button" class="btn btn-dark">Clear</button>
 
