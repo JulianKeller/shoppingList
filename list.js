@@ -19,21 +19,24 @@ function addRow() {
 
 // Calculate the total of the price column
 function sumColumn() {
+  // todo fix TOTal
   saveList();
   let sum = 0;
   const table = document.getElementById("myTable");
   for (let i = 1; i < table.rows.length; i++) {
     console.log(table.rows[i].cells[1].innerHTML);
     // const value = parseInt(table.rows[i].cells[1].innerHTML);   // check for empty prices
-    const value = parseFloat(table.rows[i].cells[1].innerHTML);   // check for empty prices
+    let value = parseFloat(table.rows[i].cells[1].innerHTML);   // check for empty prices
+    // value = Math.round(value * 100) / 100;
     if (isNaN(value)){
       continue;
     }
     console.log("value " + value);
     sum += value;
   }
-  console.log("sum " + sum);
+  sum = Math.round(sum * 100) / 100;
   document.getElementById('total').innerHTML = 'Total $' + sum; // display the total on the page
+  // console.log("sum " + sum);
   return sum;
 }
 
