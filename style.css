@@ -13,8 +13,27 @@ body {
   text-align: center;
 }
 
-#cardWrapper {
+.card-body {
   text-align: center;
-  margin-top: 50px;
-  padding-top: 50px;
 }
+
+/*#cardWrapper {*/
+  /*text-align: center;*/
+  /*margin-top: 50px;*/
+  /*padding-top: 50px;*/
+/*}*/
+
+/*#cardWrapper {*/
+  /*margin-top: 50px;*/
+  /*padding-top: 50px;*/
+/*}*/
+
+/*#collapseExample {*/
+  /*margin-top: 50px;*/
+  /*padding-top: 50px;*/
+/*}*/
+
+/*#collapseExample.collapse.show {*/
+  /*padding-top: 10px;*/
+  /*margin-top: 50px;*/
+/*}*/
