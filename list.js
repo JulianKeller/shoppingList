@@ -1,4 +1,13 @@
 
+
+/*
+regex, probably needs '$' added to the start of it
+ const regex = /^[0-9]\d*(((,\d{3}){1})?(\.\d{2})?)$/;
+  if (regex.test(userInput)) {
+    return ;
+  }
+ */
+
 // Add editable row and 2 columns to table
 function addRow() {
   const table = document.getElementById("myTable");
@@ -8,7 +17,7 @@ function addRow() {
 
   // default cell descriptions
   // item.innerHTML = "Item";
-  // price.innerHTML = "$";
+  price.innerHTML = "$";
 
   // Make new rows editable
   item.setAttribute('contenteditable', 'true');
@@ -19,24 +28,32 @@ function addRow() {
 
 // Calculate the total of the price column
 function sumColumn() {
-  // todo fix TOTal
+  // save the list
   saveList();
   let sum = 0;
+
+  let value = 0;
   const table = document.getElementById("myTable");
   for (let i = 1; i < table.rows.length; i++) {
-    console.log(table.rows[i].cells[1].innerHTML);
-    // const value = parseInt(table.rows[i].cells[1].innerHTML);   // check for empty prices
-    let value = parseFloat(table.rows[i].cells[1].innerHTML);   // check for empty prices
-    // value = Math.round(value * 100) / 100;
+
+    if (table.rows[i].cells[1].innerHTML[0] === '$'){
+      console.log("starts with a dollar sign");
+      value = parseFloat(table.rows[i].cells[1].innerHTML.substring(1));
+      console.log("value is now " + value);
+    }
+    else {
+      value = parseFloat(table.rows[i].cells[1].innerHTML);   // check for empty prices
+    }
+
+    console.log("Value is " + value);
     if (isNaN(value)){
       continue;
     }
-    console.log("value " + value);
+
     sum += value;
   }
   sum = Math.round(sum * 100) / 100;
   document.getElementById('total').innerHTML = 'Total $' + sum; // display the total on the page
-  // console.log("sum " + sum);
   return sum;
 }
 
@@ -55,7 +72,9 @@ function saveList(){
     tableArray[i] = new Array(2);
 
     tableArray[i][0] = table.rows[i].cells[0].innerHTML;
-    tableArray[i][1] = parseInt(table.rows[i].cells[1].innerHTML);
+    let price = parseFloat(table.rows[i].cells[1].innerHTML);
+    price = Math.round(price * 100) / 100;
+    tableArray[i][1] = price;
 
   }
   localStorage.setItem('table', JSON.stringify(tableArray));

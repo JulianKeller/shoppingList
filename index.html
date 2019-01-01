@@ -34,11 +34,24 @@
   </tbody>
 </table>
 
+  <div class="buttons">
   <button onclick="addRow()" type="button" class="btn btn-dark">Add Item</button>
   <!--<button onclick="sumColumn()" type="button" class="btn btn-dark">Sum</button>-->
   <!--<button onclick="getTable()" type="button" class="btn btn-dark">Restore</button>-->
-  <button onclick="emptyList()" type="button" class="btn btn-dark">Clear</button>
+  <!--<button onclick="emptyList()" type="button" class="btn btn-dark">Clear</button>-->
 
+
+    <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Clear
+    </button>
+  </div>
+  <div class="collapse" id="collapseExample">
+    <!--<div id='cardWrapper' class="card card-body">-->
+    <div id='cardWrapper'>
+      <b>This will delete the entire list.</b>
+      <button id='clearList' onclick="emptyList()" type="button" class="btn btn-danger">Clear List</button>
+    </div>
+  </div>
 
 </div>
 
