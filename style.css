@@ -13,27 +13,11 @@ body {
   text-align: center;
 }
 
-.card-body {
+
+.buttons {
+  display: inline-block;
+  overflow: auto;
+  white-space: nowrap;
+  margin: auto;
   text-align: center;
 }
-
-/*#cardWrapper {*/
-  /*text-align: center;*/
-  /*margin-top: 50px;*/
-  /*padding-top: 50px;*/
-/*}*/
-
-/*#cardWrapper {*/
-  /*margin-top: 50px;*/
-  /*padding-top: 50px;*/
-/*}*/
-
-/*#collapseExample {*/
-  /*margin-top: 50px;*/
-  /*padding-top: 50px;*/
-/*}*/
-
-/*#collapseExample.collapse.show {*/
-  /*padding-top: 10px;*/
-  /*margin-top: 50px;*/
-/*}*/

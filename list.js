@@ -17,10 +17,11 @@ function addRow() {
 
   // default cell descriptions
   // item.innerHTML = "Item";
-  price.innerHTML = "$";
+  // price.innerHTML = "$";
 
   // Make new rows editable
   item.setAttribute('contenteditable', 'true');
+  price.setAttribute('oninput', 'saveList()');
   price.setAttribute('contenteditable', 'true');
   price.setAttribute('oninput', 'sumColumn()');
 }
@@ -28,32 +29,33 @@ function addRow() {
 
 // Calculate the total of the price column
 function sumColumn() {
-  // save the list
-  saveList();
   let sum = 0;
-
   let value = 0;
   const table = document.getElementById("myTable");
   for (let i = 1; i < table.rows.length; i++) {
 
+    if (!table.rows[i].cells[1] || isNaN(value)) {    // if no input in cell
+      continue;
+    }
+
     if (table.rows[i].cells[1].innerHTML[0] === '$'){
-      console.log("starts with a dollar sign");
       value = parseFloat(table.rows[i].cells[1].innerHTML.substring(1));
-      console.log("value is now " + value);
     }
     else {
       value = parseFloat(table.rows[i].cells[1].innerHTML);   // check for empty prices
     }
 
-    console.log("Value is " + value);
-    if (isNaN(value)){
-      continue;
-    }
-
     sum += value;
   }
   sum = Math.round(sum * 100) / 100;
-  document.getElementById('total').innerHTML = 'Total $' + sum; // display the total on the page
+  console.log('sum ', sum);
+  if (isNaN(sum)){
+    document.getElementById('total').innerHTML = 'Total $0.00'; // display the total on the page
+  }
+  else{
+    document.getElementById('total').innerHTML = 'Total $' + sum.toFixed(2); // display the total on the page
+  }
+  saveList();
   return sum;
 }
 
@@ -69,13 +71,18 @@ function saveList(){
 
   // store table
   for (let i = 1; i < table.rows.length; i++) {
+    // todo check if item and price are null
+    if (table.rows[i].cells[0] == null) {
+      continue;
+    }
+
     tableArray[i] = new Array(2);
 
     tableArray[i][0] = table.rows[i].cells[0].innerHTML;
+
     let price = parseFloat(table.rows[i].cells[1].innerHTML);
     price = Math.round(price * 100) / 100;
-    tableArray[i][1] = price;
-
+    tableArray[i][1] = price.toFixed(2);    // .toFixed ensures 2 decimal places
   }
   localStorage.setItem('table', JSON.stringify(tableArray));
 }
@@ -104,17 +111,33 @@ function getTable(){
 
   // restore table
   for (let i = 1; i < storageList.length; i++) {
+    if (storageList[i] == null) {
+      continue;
+    }
     const row = table.insertRow(-1);    // add rows to the end of the table
     const item = row.insertCell(0);
     const price = row.insertCell(1);
-
     // default cell descriptions
     item.innerHTML = storageList[i][0];
-    price.innerHTML = Number(storageList[i][1]);
+    price.innerHTML = storageList[i][1];
+
+    if (item.innerHTML && price.innerHTML){
+      console.log('item.innerHTML && price.innerHTML', item.innerHTML, price.innerHTML);
+      console.log('blank row ', i);
+    }
+
+    // leave blank instead of outputting 'NaN'
+    if (isNaN(parseInt(price.innerHTML))) {
+      price.innerHTML = '';
+    }
 
     // Make new rows editable
     item.setAttribute('contenteditable', 'true');
+    item.setAttribute('oninput', 'saveList()');
+
+    price.setAttribute('oninput', 'saveList()');
     price.setAttribute('contenteditable', 'true');
+    price.setAttribute('oninput', 'sumColumn()');
   }
 }
 
@@ -126,17 +149,17 @@ function emptyList() {
 
 // run on page load
 window.onload = function () {
-  getTable();
-  sumColumn();
+  // check for empty list
+  let storageList = JSON.parse(localStorage.getItem('table'));
+  if (!storageList){
+    console.log("Empty List");
+    addRow();
+  }
+  else {
+    getTable();
+    sumColumn();
+  }
 };
 
 
-// TODO run sumColumn when the price column input is changed. Also cross out the item in the list and move it to the bottom.
-// document.getElementById('myTable').addEventListener('input', function () {
-//   console.log("input changed!");
-// });
 
-function test() {
-  console.log("Test() has run!");
-  sumColumn();
-}
