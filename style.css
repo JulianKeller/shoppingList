@@ -3,6 +3,8 @@ body {
   /*text-align: center;*/
   margin-left: auto;
   margin-right: auto;
+  /*position: relative;*/
+  margin-bottom: 100px;
 }
 
 .container {
@@ -14,10 +16,3 @@ body {
 }
 
 
-.buttons {
-  display: inline-block;
-  overflow: auto;
-  white-space: nowrap;
-  margin: auto;
-  text-align: center;
-}
