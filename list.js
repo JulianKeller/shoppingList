@@ -1,5 +1,3 @@
-
-
 /*
 regex, probably needs '$' added to the start of it
  const regex = /^[0-9]\d*(((,\d{3}){1})?(\.\d{2})?)$/;
@@ -26,7 +24,6 @@ function addRow() {
   price.setAttribute('oninput', 'sumColumn()');
 }
 
-
 // Calculate the total of the price column
 function sumColumn() {
   let sum = 0;
@@ -38,29 +35,24 @@ function sumColumn() {
       continue;
     }
 
-    if (table.rows[i].cells[1].innerHTML[0] === '$'){
+    if (table.rows[i].cells[1].innerHTML[0] === '$') {
       value = parseFloat(table.rows[i].cells[1].innerHTML.substring(1));
-    }
-    else {
+    } else {
       value = parseFloat(table.rows[i].cells[1].innerHTML);   // check for empty prices
     }
-
+    if (isNaN(value)) {
+      value = 0;
+    }
     sum += value;
   }
-  sum = Math.round(sum * 100) / 100;
-  console.log('sum ', sum);
-  if (isNaN(sum)){
-    document.getElementById('total').innerHTML = 'Total $0.00'; // display the total on the page
-  }
-  else{
-    document.getElementById('total').innerHTML = 'Total $' + sum.toFixed(2); // display the total on the page
-  }
-  saveList();
+  sum = Math.round(sum * 100) / 100;    // proper formatting
+  document.getElementById('total').innerHTML = 'Total $' + sum.toFixed(2); // display the total on the page
+  saveList();     // save the list to local storage
   return sum;
 }
 
 // Save table values in localstorage
-function saveList(){
+function saveList() {
   // check browser support
   if (typeof (Storage) === "undefined") {
     return;
@@ -87,9 +79,8 @@ function saveList(){
   localStorage.setItem('table', JSON.stringify(tableArray));
 }
 
-
 // get table values from localstorage
-function getTable(){
+function getTable() {
   // check browser support
   if (typeof (Storage) === "undefined") {
     return;
@@ -99,7 +90,7 @@ function getTable(){
   let storageList = JSON.parse(localStorage.getItem('table'));
 
   // check for empty list
-  if (!storageList){
+  if (!storageList) {
     console.log("Empty List");
     return;
   }
@@ -121,7 +112,7 @@ function getTable(){
     item.innerHTML = storageList[i][0];
     price.innerHTML = storageList[i][1];
 
-    if (item.innerHTML && price.innerHTML){
+    if (item.innerHTML && price.innerHTML) {
       console.log('item.innerHTML && price.innerHTML', item.innerHTML, price.innerHTML);
       console.log('blank row ', i);
     }
@@ -151,11 +142,10 @@ function emptyList() {
 window.onload = function () {
   // check for empty list
   let storageList = JSON.parse(localStorage.getItem('table'));
-  if (!storageList){
+  if (!storageList) {
     console.log("Empty List");
     addRow();
-  }
-  else {
+  } else {
     getTable();
     sumColumn();
   }
