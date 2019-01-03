@@ -6,7 +6,7 @@ https://codepen.io/johnraiz/pen/jvYRey
 - [x] add items to table
 - [x] make added items editable
 - [x] sum totals of table
-- [ ] save users theme preference
+- [x] save users theme preference
 - [ ] make item/price stay at the top
 
 ## Bugs

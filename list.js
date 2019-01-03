@@ -136,8 +136,10 @@ function getTable() {
 
 // empty list
 function emptyList() {
+  let theme = document.getElementById("pageStyle").getAttribute("href"); // save the users theme
   localStorage.clear(); // empty local storage
   location.reload(); // reload the page
+  changeTheme(theme);
 }
 
 
