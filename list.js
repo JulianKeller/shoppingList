@@ -79,6 +79,8 @@ function saveList() {
   localStorage.setItem('table', JSON.stringify(tableArray));
 }
 
+
+
 // get table values from localstorage
 function getTable() {
   // check browser support
@@ -112,10 +114,10 @@ function getTable() {
     item.innerHTML = storageList[i][0];
     price.innerHTML = storageList[i][1];
 
-    if (item.innerHTML && price.innerHTML) {
-      console.log('item.innerHTML && price.innerHTML', item.innerHTML, price.innerHTML);
-      console.log('blank row ', i);
-    }
+    // if (item.innerHTML && price.innerHTML) {
+    //   console.log('item.innerHTML && price.innerHTML', item.innerHTML, price.innerHTML);
+    //   console.log('blank row ', i);
+    // }
 
     // leave blank instead of outputting 'NaN'
     if (isNaN(parseInt(price.innerHTML))) {
@@ -138,8 +140,36 @@ function emptyList() {
   location.reload(); // reload the page
 }
 
+
+// allow the user to change theme
+function changeTheme(sheet) {
+  document.getElementById("pageStyle").setAttribute("href", sheet);
+  saveTheme();
+}
+
+
+// save the users chosen theme
+function saveTheme() {
+  if (typeof (Storage) === "undefined") {
+    return;
+  }
+  let theme = document.getElementById("pageStyle").getAttribute("href");
+  console.log(theme);
+  localStorage.setItem('theme', JSON.stringify(theme));
+}
+
+
+// load the users theme
+function loadTheme() {
+  let theme = JSON.parse(localStorage.getItem('theme'));
+  changeTheme(theme);
+  console.log(theme);
+}
+
+
 // run on page load
 window.onload = function () {
+  loadTheme();    // load the users theme
   // check for empty list
   let storageList = JSON.parse(localStorage.getItem('table'));
   if (!storageList) {
@@ -150,10 +180,4 @@ window.onload = function () {
     sumColumn();
   }
 };
-
-
-// allow the user to change theme
-function changeTheme(sheet) {
-  document.getElementById("pageStyle").setAttribute("href", sheet);
-}
 
