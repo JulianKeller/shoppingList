@@ -4,7 +4,12 @@ body {
 }
 
 .container {
+  /*margin-bottom: 1px;*/
+  /*height: 70%;*/
   /*width: 85%;*/
+  /*position: relative;*/
+  /*padding-bottom: 5rem;*/
+  /*overflow: scroll;*/
 }
 
 .container h1 {
@@ -13,11 +18,14 @@ body {
 
 /* Sticky footer */
 .sticky {
-  position: fixed;
+  /*display: inline-block;*/
+  /*position: absolute;*/
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 50px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  /*height: 20%;*/
   /*background-color: darkturquoise;*/
   text-align: center;
 }
@@ -28,7 +36,7 @@ body {
 }
 
 .buttons {
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
 }
 
 .tableWrapper {

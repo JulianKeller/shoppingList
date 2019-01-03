@@ -5,19 +5,34 @@ body {
 
 .container {
   /*width: 85%;*/
+  /*overflow: auto;*/
 }
 
 .container h1 {
   text-align: center;
 }
 
+/*!* Sticky footer *!*/
+/*.sticky {*/
+  /*position: fixed;*/
+  /*left: 0;*/
+  /*bottom: 0;*/
+  /*width: 100%;*/
+  /*padding: 50px;*/
+  /*!*background-color: darkturquoise;*!*/
+  /*text-align: center;*/
+/*}*/
+
 /* Sticky footer */
 .sticky {
-  position: fixed;
+  /*display: inline-block;*/
+  /*position: fixed;*/
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 50px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  /*height: 20%;*/
   /*background-color: darkturquoise;*/
   text-align: center;
 }

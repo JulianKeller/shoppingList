@@ -156,7 +156,7 @@ function saveTheme() {
     return;
   }
   let theme = document.getElementById("pageStyle").getAttribute("href");
-  console.log(theme);
+  // console.log(theme);
   localStorage.setItem('theme', JSON.stringify(theme));
 }
 
@@ -165,7 +165,7 @@ function saveTheme() {
 function loadTheme() {
   let theme = JSON.parse(localStorage.getItem('theme'));
   changeTheme(theme);
-  console.log(theme);
+  // console.log(theme);
 }
 
 
@@ -175,7 +175,7 @@ window.onload = function () {
   // check for empty list
   let storageList = JSON.parse(localStorage.getItem('table'));
   if (!storageList) {
-    console.log("Empty List");
+    // console.log("Empty List");
     addRow();
   } else {
     getTable();
