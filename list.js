@@ -152,4 +152,8 @@ window.onload = function () {
 };
 
 
+// allow the user to change theme
+function changeTheme(sheet) {
+  document.getElementById("pageStyle").setAttribute("href", sheet);
+}
 

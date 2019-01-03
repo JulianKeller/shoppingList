@@ -1,6 +1,6 @@
 body {
   margin: 15px auto 100px;
-  background-color: white;
+  background-color: #1a1a1d;
 }
 
 .container {
@@ -23,40 +23,39 @@ body {
 }
 
 .sticky a{
-  color: darkslategray;
+  color: #bababc;
   font-size: 10px;
 }
 
-.buttons {
+buttons {
   margin-bottom: 15px;
 }
 
 .tableWrapper {
   border-radius: 5px;
   padding: 20px;
-  background-color: whitesmoke;
+  background-color: #6f2232;
 }
 
 .table {
-  /*color: white;*/
+  color: whitesmoke;
 }
 
 .table td {
-  /*background-color: white;*/
-  /*border-left: 1px solid #6f2232;*/
+  background-color: #c3073f;
+  border-left: 1px solid #6f2232;
   /*border-radius: 5px;*/
 }
 
 .titles {
   /*color: #c3073f;*/
-  color: black;
-  /*text-align: left;*/
+  color: whitesmoke;
+  text-align: left;
 }
 
 .subtitles {
-  color: #606062;
+  color: #bababc;
   text-align: left;
-  /*margin-left: 20px;*/
 }
 
 #addItemButton {
@@ -78,12 +77,12 @@ body {
 }
 
 #theme1 {
-  border: 2px solid black;
+  border: 2px solid white;
   background-color: white;
 }
 
 #theme2 {
-  border: 2px solid darkgray;
+  border: 2px solid white;
   background-color: black;
 }
 

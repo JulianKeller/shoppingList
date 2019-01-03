@@ -6,7 +6,8 @@ https://codepen.io/johnraiz/pen/jvYRey
 - [x] add items to table
 - [x] make added items editable
 - [x] sum totals of table
-- [ ] ditch bootstrap so I can move things around easier
+- [ ] save users theme preference
+- [ ] make item/price stay at the top
 
 ## Bugs
 - [x] fix bug where adding first item doesn't run the sumColumn() function.
