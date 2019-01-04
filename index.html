@@ -24,46 +24,49 @@
   <h4 id="total" class="subtitles">Total</h4>
 
   <div class="tableWrapper">
-  <table id="myTable" class="table border-bottom">
-    <thead>
-    <tr>
-      <th scope="col">Item</th>
-      <th scope="col">$ Price</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <!--<td contenteditable="true" oninput="saveList()"></td>-->
-      <!--<td contenteditable="true" oninput="sumColumn()">$</td>-->
-    </tr>
-    </tbody>
-  </table>
+    <table id="myTable" class="table border-bottom">
+      <thead>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">$ Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <!--<td contenteditable="true" oninput="saveList()"></td>-->
+        <!--<td contenteditable="true" oninput="sumColumn()">$</td>-->
+      </tr>
+      </tbody>
+    </table>
 
-  <div class="buttons text-center">
-    <button id='addItemButton' onclick="addRow()" type="button" class="btn">Add Item</button>
-    <!--<button id='dark' onclick="addRow()" type="button" class="btn btn-light">Dark</button>-->
-    <!--<button onclick="sumColumn()" type="button" class="btn btn-dark">Sum</button>-->
-    <!--<button onclick="getTable()" type="button" class="btn btn-dark">Restore</button>-->
-    <!--<button onclick="emptyList()" type="button" class="btn btn-dark">Clear</button>-->
+    <div class="buttons text-center">
+      <button id='addItemButton' onclick="addRow()" type="button" class="btn">Add Item</button>
+      <!--<button id='dark' onclick="addRow()" type="button" class="btn btn-light">Dark</button>-->
+      <!--<button onclick="sumColumn()" type="button" class="btn btn-dark">Sum</button>-->
+      <!--<button onclick="getTable()" type="button" class="btn btn-dark">Restore</button>-->
+      <!--<button onclick="emptyList()" type="button" class="btn btn-dark">Clear</button>-->
 
 
-    <button id='deleteItemButton' class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-      Clear
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" onclick="emptyList()">Delete List</a>
+      <button id='deleteItemButton' class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+        Clear
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" onclick="emptyList()">Delete List</a>
+      </div>
     </div>
   </div>
-  </div>
 
-  <div class="sticky">
+  <div class="footer">
     <hr>
-    <a target="_blank" href="https://juliankeller.github.io/">Created by Julian</a>
     <div class="themes">
-      <button id='theme1' onclick="changeTheme('style.css')" type="button" class="colors"></button>
-      <button id='theme2' onclick="changeTheme('dark.css')" type="button" class="colors"></button>
+      <p class="footerText">Choose a Theme</p>
+      <span><button id='theme1' onclick="changeTheme('style.css')" type="button" class="colors"></button></span>
+      <span><button id='theme2' onclick="changeTheme('dark.css')" type="button" class="colors"></button></span>
     </div>
+    <a target="_blank" href="https://juliankeller.github.io/">Created by Julian Keller</a>
+    <a >&copy; 2019</a>
   </div>
 
 </div>

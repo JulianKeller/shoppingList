@@ -24,9 +24,9 @@ body {
 /*}*/
 
 /* Sticky footer */
-.sticky {
+.footer {
   /*display: inline-block;*/
-  /*position: fixed;*/
+  /*position: absolute;*/
   left: 0;
   bottom: 0;
   width: 100%;
@@ -35,14 +35,27 @@ body {
   /*height: 20%;*/
   /*background-color: darkturquoise;*/
   text-align: center;
+  color: #bababc;
+  font-size: 10px;
+  margin-top: 10px;
 }
 
-.sticky a{
+.footer a {
   color: #bababc;
   font-size: 10px;
 }
 
-buttons {
+.themes {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.themes p {
+  margin-bottom: 5px;
+}
+
+.buttons {
   margin-bottom: 15px;
 }
 
@@ -54,6 +67,10 @@ buttons {
 
 .table {
   color: whitesmoke;
+}
+
+.table th{
+  border-top: none;
 }
 
 .table td {
@@ -87,8 +104,8 @@ buttons {
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  margin: 5px;
-  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #theme1 {
