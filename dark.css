@@ -55,10 +55,6 @@ body {
   margin-bottom: 5px;
 }
 
-.buttons {
-  margin-bottom: 15px;
-}
-
 .tableWrapper {
   border-radius: 5px;
   padding: 20px;
@@ -67,6 +63,7 @@ body {
 
 .table {
   color: whitesmoke;
+  border-style: hidden;
 }
 
 .table th{
