@@ -8,6 +8,7 @@ https://codepen.io/johnraiz/pen/jvYRey
 - [x] sum totals of table
 - [x] save users theme preference
 - [ ] make item/price stay at the top
+- [ ] add favicon and save to homescreen icon
 
 ## Bugs
 - [x] fix bug where adding first item doesn't run the sumColumn() function.
