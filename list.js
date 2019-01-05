@@ -163,7 +163,11 @@ function saveTheme() {
 
 // load the users theme
 function loadTheme() {
+
   let theme = JSON.parse(localStorage.getItem('theme'));
+  if (theme == null){
+    theme = 'style.css';
+  }
   changeTheme(theme);
   // console.log(theme);
 }
