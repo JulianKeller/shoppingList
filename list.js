@@ -19,6 +19,7 @@ function addRow() {
 
   // Make new rows editable
   item.setAttribute('contenteditable', 'true');
+  item.setAttribute('oninput', 'saveList()');
   price.setAttribute('oninput', 'saveList()');
   price.setAttribute('contenteditable', 'true');
   price.setAttribute('oninput', 'sumColumn()');
@@ -63,7 +64,6 @@ function saveList() {
 
   // store table
   for (let i = 1; i < table.rows.length; i++) {
-    // todo check if item and price are null
     if (table.rows[i].cells[0] == null) {
       continue;
     }
@@ -163,7 +163,6 @@ function saveTheme() {
 
 // load the users theme
 function loadTheme() {
-
   let theme = JSON.parse(localStorage.getItem('theme'));
   if (theme == null){
     theme = 'style.css';
