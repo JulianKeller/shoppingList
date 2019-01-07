@@ -23,8 +23,6 @@ function addRow() {
   price.setAttribute('oninput', 'saveList()');
   price.setAttribute('contenteditable', 'true');
   price.setAttribute('oninput', 'sumColumn()');
-
-  price.setAttribute('type', 'number');
 }
 
 // Calculate the total of the price column
