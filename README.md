@@ -19,6 +19,9 @@ To use the list simply visit https://juliankeller.github.io/shoppingList/.
 ### Saving your List
 Shopping List stores your list in your browsers local storage automatically. You can exit the web browser or even refresh the page and the list will remain. You can clear the list by simply clicking 'Clear.'
 
+### Themes
+There is a light and dark theme for the app. Simply click the white or black circular buttons at the bottom of the page.
+
 ## TODO
 - [x] add items to table
 - [x] make added items editable
