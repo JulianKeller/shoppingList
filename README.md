@@ -8,7 +8,9 @@ These instructions will get you a copy of the project running on your local mach
 
 ### Prerequisites
 
-Web Browser and Internet Connection
+Modern Web Browser and Internet Connection.
+
+Internet Explorer is not supported. Chrome, Firefox, or Safari is recommended.
 
 ## Usage
 
